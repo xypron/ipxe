@@ -106,7 +106,7 @@ static unsigned int sleep_interruptible ( unsigned int secs,
 			step();
 			if ( interrupted && interrupted() )
 				return secs;
-			cpu_nap();
+			// cpu_nap();
 		}
 		start = now;
 	}

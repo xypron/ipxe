@@ -98,7 +98,7 @@ int getchar ( void ) {
 		 * makes Etherboot waiting for user interaction waste a lot
 		 * less CPU time in a VMware session.
 		 */
-		cpu_nap();
+		// cpu_nap();
 
 		/* Keep processing background tasks while we wait for
 		 * input.

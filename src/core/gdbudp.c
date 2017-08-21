@@ -156,7 +156,7 @@ static size_t gdbudp_recv ( char *buf, size_t len ) {
 bad_packet:
 			free_iob ( iob );
 		}
-		cpu_nap();
+		// cpu_nap();
 	}
 }
 

@@ -51,7 +51,7 @@ static int getchar_timeout ( unsigned long timeout ) {
 		step();
 		if ( iskey() )
 			return getchar();
-		cpu_nap();
+		// cpu_nap();
 	}
 
 	return -1;
