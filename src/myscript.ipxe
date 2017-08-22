@@ -1,0 +1,7 @@
+#!ipxe
+echo Script started
+set user-class:hex 04:69:50:48:45
+dhcp
+route
+echo Opening shell
+shell
