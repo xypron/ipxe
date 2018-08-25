@@ -16,7 +16,6 @@ ASFLAGS		+= -mabi=lp64 -EL
 ifeq ($(CCTYPE),gcc)
 LP64_TEST = $(CC) -mabi=lp64 -x c -c /dev/null -o /dev/null >/dev/null 2>&1
 LP64_FLAGS := $(shell $(LP64_TEST) && $(ECHO) '-mabi=lp64')
-WORKAROUND_CFLAGS += $(LP64_FLAGS)
 endif
 
 # EFI requires -fshort-wchar, and nothing else currently uses wchar_t
