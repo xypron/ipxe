@@ -35,6 +35,8 @@ FILE_LICENCE ( MIT );
 #include "arch-x86/xen.h"
 #elif defined(__arm__) || defined (__aarch64__)
 #include "arch-arm.h"
+#elif defined(__riscv)
+#include "arch-arm.h"
 #else
 #error "Unsupported architecture"
 #endif
