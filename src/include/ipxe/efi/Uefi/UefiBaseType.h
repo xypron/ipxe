@@ -248,6 +248,16 @@ typedef union {
 ///
 #define EFI_IMAGE_MACHINE_AARCH64  0xAA64
 
+///
+/// PE32+ Machine type for riscv64 images.
+///
+#define EFI_IMAGE_MACHINE_RISCV32  0x5032
+
+///
+/// PE32+ Machine type for riscv64 images.
+///
+#define EFI_IMAGE_MACHINE_RISCV64  0x5064
+
 
 #if   defined (MDE_CPU_IA32)
 
@@ -281,6 +291,11 @@ typedef union {
 
 #define EFI_IMAGE_MACHINE_TYPE_SUPPORTED(Machine) \
   (((Machine) == EFI_IMAGE_MACHINE_AARCH64) || ((Machine) == EFI_IMAGE_MACHINE_EBC))
+
+#elif defined (MDE_CPU_RISCV64)
+
+#define EFI_IMAGE_MACHINE_TYPE_SUPPORTED(Machine) \
+  (((Machine) == EFI_IMAGE_MACHINE_RISCV64) || ((Machine) == EFI_IMAGE_MACHINE_EBC))
 
 #define EFI_IMAGE_MACHINE_CROSS_TYPE_SUPPORTED(Machine) (FALSE)
 
