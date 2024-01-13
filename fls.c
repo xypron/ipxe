@@ -13,11 +13,11 @@ int __flsll(long long value)
 
 		"fls_loop:"
 		"srl t3, t1, t2\n"
-		"beqz t3, fls_cont\n"		
-		"mv t1, t3\n"
-		"add a0, a0, t2\n"
-
-		"fls_cont:\n"
+		"seqz t3, t3\n"
+		"addi t3, t3, -1\n"
+		"and t3, t3, t2\n"
+		"add a0, a0, t3\n"
+		"srl t1, t1, t3\n"
 		"srl t2, t2, 1\n"
 		"bne t2, x0, fls_loop\n"
 

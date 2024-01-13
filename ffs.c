@@ -12,13 +12,13 @@ int __ffsll(long long value)
 		"li a0, 64\n"
 		"li t2, 32\n"
 
-		"ffs_loop:"
+		"ffs_loop:\n"
 		"sll t3, t1, t2\n"
-		"beqz t3, ffs_cont\n"		
-		"mv t1, t3\n"
-		"sub a0, a0, t2\n"
-
-		"ffs_cont:\n"
+		"seqz t3, t3\n"
+		"addi t3, t3, -1\n"
+		"and t3, t3, t2\n"
+		"sub a0, a0, t3\n"
+		"sll t1, t1, t3\n"
 		"srl t2, t2, 1\n"
 		"bne t2, x0, ffs_loop\n"
 
