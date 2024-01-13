@@ -14,8 +14,8 @@ int __flsll(long long value)
 		"fls_loop:"
 		"srl t3, t1, t2\n"
 		"beqz t3, fls_cont\n"		
+		"mv t1, t3\n"
 		"add a0, a0, t2\n"
-		"srl t1, t1, t2\n"
 
 		"fls_cont:\n"
 		"srl t2, t2, 1\n"
